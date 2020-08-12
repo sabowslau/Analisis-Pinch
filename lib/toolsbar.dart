@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'analpinchdata.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'customDialog.dart';
-import 'package:sabowsla/locator.dart';
-import 'package:sabowsla/services/navigation_service.dart';
 
 Color bg300 = Colors.blueGrey[300];
 
@@ -23,7 +21,6 @@ class _ToolsBarState extends State<ToolsBar> {
       backgroundColor: Colors.blueGrey[100],
       title: Row(
         children: <Widget>[
-          GoHomeButton(),
           AddCurrent(),
           ToolButton(
             child: Text("D+"),
@@ -44,20 +41,6 @@ class _ToolsBarState extends State<ToolsBar> {
           Help(),
         ],
       ),
-    );
-  }
-}
-
-class GoHomeButton extends StatelessWidget {
-  const GoHomeButton({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return FlatButton(
-      child: Icon(Icons.arrow_back),
-      onPressed: () {
-        locator<NavigationService>().navigateTo("/home");
-      },
     );
   }
 }
